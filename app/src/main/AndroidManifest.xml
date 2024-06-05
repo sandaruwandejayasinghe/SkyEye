@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Root element of the manifest file -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permissions required by the app -->
+    <!-- Permission to access the internet -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Permission to access fine location (GPS) -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- Permission to access coarse location (network-based) -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Application element defining the app -->
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SkyEye"
+        tools:targetApi="31">
+
+        <!-- WelcomeActivity is the launch activity -->
+        <activity android:name=".WelcomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <!-- Indicates that this activity is the entry point of the app -->
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- MainActivity of the app -->
+        <activity android:name=".MainActivity" android:exported="true" />
+
+    </application>
+
+</manifest>
